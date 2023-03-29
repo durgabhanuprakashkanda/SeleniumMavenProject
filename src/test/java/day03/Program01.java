@@ -11,6 +11,7 @@ public class Program01 {
 	public static void main(String[] args) throws Exception {
 		File src = new File(".\\src\\test\\resources\\DataSheet.xlsx");
 		FileInputStream stream = new FileInputStream(src);
+		@SuppressWarnings("resource")
 		XSSFWorkbook wb = new XSSFWorkbook(stream);
 		XSSFSheet sh = wb.getSheet("test");
 		System.out.println(sh.getRow(0).getCell(0).getStringCellValue());
